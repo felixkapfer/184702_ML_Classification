@@ -1,5 +1,22 @@
 import pandas as pd
+from logger import Logger
 from sklearn.impute import SimpleImputer
+
+logger = Logger(__name__)
+
+def get_dataset_dimensions(df: pd.DataFrame) -> tuple:
+    """
+    Returns the dimensions of the DataFrame.
+
+    Parameters:
+        - df (pd.DataFrame): The input DataFrame.
+
+    Returns:
+        - tuple: A tuple containing the number of rows and columns in the DataFrame.
+    """
+    logger.info(f"Dataset dimensions: {df.shape}")
+    return df.shape  # Returns a tuple (number of rows, number of columns)
+
 
 def count_unique_values(df: pd.DataFrame, columns: list) -> pd.DataFrame:
     """
